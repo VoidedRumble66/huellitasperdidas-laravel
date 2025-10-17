@@ -58,7 +58,10 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/nosotros') }}">Nosotros</a></li>
                             <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+
+
                         </ul>
                     </li>
                 </ul>
