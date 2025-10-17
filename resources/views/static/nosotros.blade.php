@@ -1,5 +1,4 @@
 <x-layout>
-    {{-- Opcional: estilos mínimos para remates visuales (puedes quitarlo) --}}
     @section('css')
     <style>
         .hp-icon-lg { font-size: 2rem; }
@@ -8,9 +7,9 @@
 
     <section class="py-5">
         <div class="container">
-            {{-- Fila principal: imagen + texto --}}
+            {{-- Fila principal --}}
             <div class="row align-items-center gy-3 gx-md-5">
-                {{-- Imagen (5/12 en md+, full en móvil) --}}
+                {{-- Imagen --}}
                 <div class="col-12 col-md-5 mb-3 mb-md-0 text-center">
                     <img
                         src="{{ asset('image/logo.huellitas.png') }}"
@@ -19,7 +18,7 @@
                     >
                 </div>
 
-                {{-- Texto (7/12 en md+, full en móvil) --}}
+                {{-- Texto --}}
                 <div class="col-12 col-md-7">
                     <h2 class="h3">¿Quiénes somos?</h2>
                     <p class="text-muted">

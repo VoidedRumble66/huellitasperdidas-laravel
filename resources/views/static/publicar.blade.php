@@ -110,8 +110,8 @@
                             <label for="descripcion" class="form-label">Descripción detallada <span class="text-danger">*</span></label>
                             <textarea id="descripcion" name="descripcion" rows="3" class="form-control"
                                       placeholder="Color, tamaño, collar, señas particulares, etc." required></textarea>
-                                    {{-- Radios: requerido (mínimo dos opciones) --}}
-                                    <div class="col-md-6">
+
+                                      <div class="col-md-6">
                                         <label class="form-label d-block">¿Tiene collar? <span class="text-danger">*</span></label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="tieneCollar" id="collarSi" value="si" required>
@@ -124,7 +124,7 @@
                                         <div class="invalid-feedback d-block">Selecciona una opción.</div>
                                     </div>
 
-                                    {{-- Numérico con rango y filtro (opcional, pero ayuda al criterio) --}}
+                                    {{-- Numérico con rango y filtro --}}
                                     <div class="col-md-6">
                                         <label for="recompensa" class="form-label">Recompensa (MXN)</label>
                                         <input type="number" id="recompensa" name="recompensa" class="form-control"

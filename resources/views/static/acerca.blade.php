@@ -3,13 +3,13 @@
         <h1 class="h3 mb-4">Acerca de…</h1>
         <div class="row g-4">
             @php
-                // Reemplaza por tu equipo real. Coloca las fotos en public/image/equipo/*.jpg
+
                 $equipo = [
                     ['nombre'=>'Rodrigo Méndez Encinos', 'modulo'=>'Mascotas (consulta)', 'foto'=>asset('image/equipo/rodrigo.jpg'), 'link'=>route('mascotas.index')],
                     ['nombre'=>'Cristian Gabriel Montiel Torres',        'modulo'=>'Publicar mascota',    'foto'=>asset('image/equipo/naomi.jpg'),   'link'=>route('publicar')],
                     ['nombre'=>'Jose Miguel Escobar Roblero',           'modulo'=>'Usuarios/Perfil',     'foto'=>asset('image/equipo/daniel.jpg'),  'link'=>url('/usuarios')],
-                    ['nombre'=>'Jose Jahir Román Hernández',           'modulo'=>'Usuarios/Perfil',     'foto'=>asset('image/equipo/daniel.jpg'),  'link'=>url('/usuarios')], // placeholder
- // placeholder
+                    ['nombre'=>'Jose Jahir Román Hernández', 'modulo'=>'Usuarios/Perfil', 'foto'=>asset('image/equipo/jahir.jpg'), 'link'=>route('users.index')],
+
                 ];
             @endphp
 

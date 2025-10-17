@@ -1,4 +1,3 @@
-    {{-- ========= HECHO POR: RODRIGO MÉNDEZ ENCINOS ========= --}}
 <x-layout>
     {{-- ========= CSS ========= --}}
     @section('css')

@@ -7,11 +7,12 @@
     @endsection
 
     @php
-        // DEMO sin BD: reemplaza por consulta real
+        // DEMO sin BD
         $usuarios = [
-            ['id'=>1,'nombre'=>'Rodrigo Méndez','email'=>'rodrigo@demo.mx','rol'=>'admin','estado'=>'Activo','nacimiento'=>'2003-05-12','telefono'=>'9611234567','avatar'=>asset('image/images.jpeg')],
-            ['id'=>2,'nombre'=>'Naomi Valdiviezo','email'=>'naomi@demo.mx','rol'=>'usuario','estado'=>'Activo','nacimiento'=>'2006-01-20','telefono'=>'9611112233','avatar'=>asset('image/images.jpeg')],
-            ['id'=>3,'nombre'=>'Daniel Tamayo','email'=>'daniel@demo.mx','rol'=>'voluntario','estado'=>'Inactivo','nacimiento'=>'2006-03-15','telefono'=>'9619998877','avatar'=>asset('image/images.jpeg')],
+            ['id'=>1,'nombre'=>'Rodrigo Méndez','email'=>'rodrigo@gmail.mx','rol'=>'admin','estado'=>'Activo','nacimiento'=>'2003-05-12','telefono'=>'9611234567','avatar'=>asset('image/images.jpeg')],
+            ['id'=>2,'nombre'=>'Jose Roman','email'=>'joseroman@gmail.mx','rol'=>'usuario','estado'=>'Activo','nacimiento'=>'2006-01-20','telefono'=>'9611112233','avatar'=>asset('image/images.jpeg')],
+            ['id'=>3,'nombre'=>'Cristian Montiel','email'=>'crismonti@gmail.mx','rol'=>'voluntario','estado'=>'Inactivo','nacimiento'=>'2006-03-15','telefono'=>'9619998877','avatar'=>asset('image/images.jpeg')],
+            ['id'=>4,'nombre'=>'Jose Miguel','email'=>'miguee@gmail.mx','rol'=>'voluntario','estado'=>'Inactivo','nacimiento'=>'2006-03-15','telefono'=>'9619998877','avatar'=>asset('image/images.jpeg')],
         ];
     @endphp
 

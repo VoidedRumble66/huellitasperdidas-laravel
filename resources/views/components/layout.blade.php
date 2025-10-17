@@ -46,15 +46,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">
-                        Nosotros
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link {{ request()->is('acerca') ? 'active' : '' }}" href="{{ route('acerca') }}">
                         Acerca de..
                     </a>
                 </li>
+
             </ul>
 
 
@@ -68,9 +64,9 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
                             <li><a class="dropdown-item" href="{{ url('/nosotros') }}">Nosotros</a></li>
+                            <li><a class="dropdown-item" href="{{ route('users.index') }}">Usuarios</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-
-
                         </ul>
                     </li>
                 </ul>

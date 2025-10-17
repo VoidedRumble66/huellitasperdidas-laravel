@@ -1,13 +1,13 @@
 <x-layout>
     @php
-        // mode = 'create' | 'edit' (llega desde la ruta)
+        // mode = 'create' | 'edit'
         $isEdit = ($mode ?? 'create') === 'edit';
 
-        // DEMO sin BD: si es edit, popular con datos falsos
+        // Sin base de datos
         $user = $isEdit ? [
             'id'        => request()->route('id'),
             'nombre'    => 'Usuario Demo',
-            'email'     => 'demo@huellitas.mx',
+            'email'     => 'huellitas@perdidas.mx',
             'rol'       => 'usuario', // admin | usuario | voluntario
             'estado'    => 'activo',  // activo | inactivo
             'telefono'  => '9611234567',
@@ -70,7 +70,7 @@
                             <div class="invalid-feedback">Ingresa un correo válido.</div>
                         </div>
 
-                        {{-- Teléfono con patrón (10 dígitos MX) --}}
+                        {{-- Teléfono con patrón --}}
                         <div class="col-md-6">
                             <label for="telefono" class="form-label">Teléfono (10 dígitos) <span class="text-danger">*</span></label>
                             <input type="tel" id="telefono" name="telefono" class="form-control" required
@@ -79,7 +79,7 @@
                             <div class="invalid-feedback">Coloca 10 dígitos (solo números).</div>
                         </div>
 
-                        {{-- Rol (select) --}}
+                        {{-- Rol --}}
                         <div class="col-md-3">
                             <label for="rol" class="form-label">Rol <span class="text-danger">*</span></label>
                             <select id="rol" name="rol" class="form-select" required>
@@ -91,7 +91,7 @@
                             <div class="invalid-feedback">Selecciona un rol.</div>
                         </div>
 
-                        {{-- Estado (radio) --}}
+                        {{-- Estado  --}}
                         <div class="col-md-3">
                             <label class="form-label d-block">Estado <span class="text-danger">*</span></label>
                             <div class="form-check form-check-inline">
