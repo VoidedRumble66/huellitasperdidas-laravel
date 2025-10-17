@@ -1,7 +1,7 @@
 <x-layout>
     @section('css')
     <style>
-        /* Cuadritos de preview */
+
         .hp-thumb { width: 100px; height: 100px; object-fit: cover; border-radius: .5rem; }
         .hp-thumb-wrap { width: 100px; height: 100px; position: relative; }
         .hp-remove {
@@ -12,21 +12,14 @@
     @endsection
 
     @php
-        /**
-         * Placeholders mientras no hay BD ni Auth.
-         * Cuando conectes, quita este bloque y rellena con datos reales del usuario/logged user.
-         */
+
         $usuarioMock = [
-            'id'       => '',   // <- quedará vacío hasta conectar auth
-            'nombre'   => '',   // <- quedará vacío hasta conectar auth
-            'correo'   => '',   // <- quedará vacío hasta conectar auth
-            'telefono' => '',   // <- quedará vacío hasta conectar auth
+            'id'       => '',   
+            'nombre'   => '',   
+            'correo'   => '',   
+            'telefono' => '',   
         ];
 
-        /**
-         * Especies simuladas. Cuando conectes BD, pobla desde tu tabla `especie`.
-         * Ejemplo: $especies = \App\Models\Especie::select('id','nombre')->get();
-         */
         $especies = [
             ['id' => 1, 'nombre' => 'Perro'],
             ['id' => 2, 'nombre' => 'Gato'],
@@ -37,9 +30,6 @@
     <div class="container py-4">
         <h1 class="h3 mb-4">Reportar Mascota</h1>
 
-        {{-- ALERTAS (placeholder) --}}
-        {{-- Cuando valides en servidor, muestra aquí flash messages --}}
-        {{-- <div class="alert alert-danger">Error de ejemplo</div> --}}
 
         <form class="needs-validation" novalidate action="#" method="post" enctype="multipart/form-data"
               onsubmit="event.preventDefault(); alert('Solo visual: aquí se enviaría el formulario.');">
@@ -120,13 +110,36 @@
                             <label for="descripcion" class="form-label">Descripción detallada <span class="text-danger">*</span></label>
                             <textarea id="descripcion" name="descripcion" rows="3" class="form-control"
                                       placeholder="Color, tamaño, collar, señas particulares, etc." required></textarea>
+                                    {{-- Radios: requerido (mínimo dos opciones) --}}
+                                    <div class="col-md-6">
+                                        <label class="form-label d-block">¿Tiene collar? <span class="text-danger">*</span></label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="tieneCollar" id="collarSi" value="si" required>
+                                            <label class="form-check-label" for="collarSi">Sí</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="tieneCollar" id="collarNo" value="no" required>
+                                            <label class="form-check-label" for="collarNo">No</label>
+                                        </div>
+                                        <div class="invalid-feedback d-block">Selecciona una opción.</div>
+                                    </div>
+
+                                    {{-- Numérico con rango y filtro (opcional, pero ayuda al criterio) --}}
+                                    <div class="col-md-6">
+                                        <label for="recompensa" class="form-label">Recompensa (MXN)</label>
+                                        <input type="number" id="recompensa" name="recompensa" class="form-control"
+                                            min="0" max="10000" step="1" placeholder="0">
+                                        <div class="form-text">Ingresa un valor entre 0 y 10,000.</div>
+                                    </div>
+
+
                             <div class="invalid-feedback">Describe a la mascota.</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- ===== Fotos (preview incremental) ===== --}}
+            {{-- ===== Fotos ===== --}}
             <div class="card mb-4">
                 <div class="card-header fw-semibold">Fotos de la mascota</div>
                 <div class="card-body">
@@ -160,7 +173,7 @@
             });
         })();
 
-        // ===== Datos simulados de razas por especie (sin BD) =====
+        // ===== Datos simulados de razas por especie =====
         const RAZAS_POR_ESPECIE = {
             1: [ // Perro
                 { id: 101, nombre: 'Mestizo' },

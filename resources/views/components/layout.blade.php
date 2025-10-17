@@ -31,23 +31,32 @@
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">
-                            Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('extraviados') ? 'active' : '' }}" href="{{ url('/extraviados') }}">
-                            Extraviados
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('publicar') ? 'active' : '' }}" href="{{ url('/publicar') }}">
-                            Reportar
-                        </a>
-                    </li>
-                </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('mascotas') ? 'active' : '' }}" href="{{ route('mascotas.index') }}">
+                        Mascotas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('publicar') ? 'active' : '' }}" href="{{ route('publicar') }}">
+                        Publicar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('nosotros') ? 'active' : '' }}" href="{{ route('nosotros') }}">
+                        Nosotros
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('acerca') ? 'active' : '' }}" href="{{ route('acerca') }}">
+                        Acerca de..
+                    </a>
+                </li>
+            </ul>
+
 
                 {{-- Perfil a la derecha --}}
                 <ul class="navbar-nav ms-auto">

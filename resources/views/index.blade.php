@@ -1,8 +1,8 @@
+    {{-- ========= HECHO POR: RODRIGO MÉNDEZ ENCINOS ========= --}}
 <x-layout>
-    {{-- ========= CSS opcional mínimo (todo Bootstrap-friendly) ========= --}}
+    {{-- ========= CSS ========= --}}
     @section('css')
     <style>
-        /* Números grandes de los pasos, usando solo un par de utilidades */
         .step-circle {
             width: 56px; height: 56px; border-radius: 50%;
             display: inline-flex; align-items: center; justify-content: center;
@@ -10,15 +10,14 @@
         }
             /* Tamaño del carrusel */
         #hpCarousel .carousel-item img {
-            max-height: 450px; /* <- Cambia esta altura a la que quieras */
-            object-fit: cover; /* Recorta bien sin deformar */
+            max-height: 450px; 
+            object-fit: cover; 
         }
-        /* Pequeño esqueleto si no hay datos aún */
         .skeleton { background: linear-gradient(90deg,#eee,#f5f5f5,#eee); background-size: 200% 100%; animation: sh 1.2s infinite; }
         @keyframes sh { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
     </style>
     @endsection
-    {{-- ========= HERO / CARRUSEL ========= --}}
+    {{-- ========= CARRUSEL ========= --}}
     <div id="hpCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#hpCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -27,7 +26,6 @@
         </div>
 
         <div class="carousel-inner">
-            {{-- Usa imágenes en public/img/slide1.jpg, slide2.jpg, slide3.jpg --}}
             <div class="carousel-item active">
                 <img src="{{ asset('image/slide1.jpg') }}" class="d-block w-100" alt="Ayudemos a reunir familias">
                 <div class="carousel-caption text-start">
@@ -62,20 +60,8 @@
         </button>
     </div>
 
-    {{-- ========= MASCOTAS RECIENTES (placeholder sin BD) ========= --}}
     @php
-        /**
-         * Cuando conectes BD, este bloque se reemplaza por:
-         * $recientes = Mascota::with(['especie','raza','fotoPrincipal'])
-         *     ->orderByDesc('fechadeextravio')
-         *     ->limit(4)->get();
-         */
-        $recientes = []; // <-- DEJA VACÍO mientras no haya BD
-        // Ejemplo manual temporal (puedes borrar si quieres dejarlo vacío):
-        // $recientes = [
-        //   ['id'=>1,'nombre'=>'Kira','especie'=>'Perro','raza'=>'Mestizo','foto'=>asset('imgmascotas/demo1.jpg')],
-        //   ['id'=>2,'nombre'=>'Mishu','especie'=>'Gato','raza'=>'Siames','foto'=>asset('imgmascotas/demo2.jpg')],
-        // ];
+        $recientes = [];
     @endphp
 
     <section class="py-5">
@@ -124,7 +110,7 @@
         </div>
     </section>
 
-    {{-- ========= LLAMADO / CTA ========= --}}
+    {{-- ========= LLAMADO ========= --}}
     <section class="bg-light py-5 text-center">
         <div class="container">
             <h2 class="h3">¿Perdiste a tu mascota?</h2>
@@ -177,10 +163,10 @@
         </div>
     </section>
 
-    {{-- ========= JS (solo Bootstrap APIs) ========= --}}
+    {{-- ========= JS  ========= --}}
     @section('js')
     <script>
-        // Auto-rotación del carrusel (5s) – ya respeta swipe en móvil por Bootstrap
+        // Auto-rotación del carrusel 
         const hpCarousel = document.querySelector('#hpCarousel');
         if (hpCarousel) {
             new bootstrap.Carousel(hpCarousel, { interval: 5000, ride: 'carousel', pause: 'hover', touch: true });

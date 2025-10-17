@@ -122,7 +122,7 @@
         </div>
     </section>
 
-    {{-- JS extra (no se necesita aquí) --}}
+    {{-- JS --}}
     @section('js')
     @endsection
 </x-layout>
